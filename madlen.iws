@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bc0b487-83d0-4c80-81b0-a56f8463dcac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/madlen.iws" beforeDir="false" afterPath="$PROJECT_DIR$/madlen.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/madlen/madlen/service/MetadataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madlen/madlen/service/MetadataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/madlen/madlen/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madlen/madlen/service/QuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madlen/madlen/dto/CreateQuestionRequestDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madlen/madlen/dto/CreateQuestionRequestDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madlen/madlen/dto/FilterDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madlen/madlen/dto/FilterDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madlen/madlen/model/Metadata.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madlen/madlen/model/Metadata.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madlen/madlen/model/ModelAnswer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madlen/madlen/model/ModelAnswer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madlen/madlen/service/MetadataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madlen/madlen/service/MetadataService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/madlen/madlen/service/QuestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/madlen/madlen/service/QuestionService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.madlen.madlen.MadlenApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.madlen.madlen.MadlenApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.madlen.madlen.MadlenApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.madlen.madlen.MadlenApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/madlen/madlen/model/SupportingEvidence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/madlen/madlen/model/SupportingEvidence.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
