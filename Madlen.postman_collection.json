@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "6bc75792-1a87-4025-9836-2be64b44065d",
+		"name": "Madlen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19877583"
+	},
+	"item": [
+		{
+			"name": "createQuestion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"questionText\": \"What is the capital of France?\",\n  \"contextPages\": [1, 2, 3],\n  \"difficultyLevel\": \"INTERMEDIATE\",\n  \"cognitiveLevel\": \"COMPREHENSION\",\n  \"keyConcepts\": [\"Geography\", \"Europe\", \"Capital Cities\"],\n  \"courseName\": \"Geography 101\",\n  \"modelAnswer\": {\n    \"mainArgument\": \"Paris is the capital of France.\",\n    \"keyPoints\": [\n      \"France is a country in Europe.\",\n      \"Paris is a major city in France.\"\n    ],\n    \"supportingEvidence\": [\n      {\n        \"point\": \"Paris has been the capital for centuries.\",\n        \"pageReference\": 5\n      },\n      {\n        \"point\": \"Paris is the largest city in France.\",\n        \"pageReference\": 10\n      }\n    ],\n    \"conclusion\": \"Thus, Paris is the capital of France.\"\n  },\n  \"gradingCriteria\": [\n    \"Correct answer\",\n    \"Clear explanation\",\n    \"Proper formatting\"\n  ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getQuestionById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/questions/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteQuestionById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/questions/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllQuestions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"field\" : \"courseName\",\n        \"values\" : [\"Geography 101\"],\n        \"operators\" : [],\n        \"logic\" : \"AND\"\n    },\n    {\n        \"field\" : \"difficultyLevel\",\n        \"values\" : [\"INTERMEDIATE\"],\n        \"operators\" : [],\n        \"logic\" : \"and\"\n    },\n    {\n        \"field\" : \"cognitiveLevel\",\n        \"values\" : [\"COMPREHENSION\"],\n        \"operators\" : [],\n        \"logic\" : \"or\"\n    },\n    {\n        \"field\" : \"contextPages\",\n        \"values\" : [\"1\"],\n        \"operators\" : [],\n        \"logic\" : \"or\"\n    },\n    {\n        \"field\" : \"questionText\",\n        \"values\" : [\"capi\"],\n        \"operators\" : [],\n        \"logic\" : \"and\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/questions?page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"questions"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMetadata",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/metadata",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"metadata"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
