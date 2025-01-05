@@ -75,5 +75,5 @@ Supporting evidence is linked to a specific point and page:
 
 1. **Build Docker images by using dockerfile**
 - docker build -f Dockerfile -t madlen .
-2. **Start all necessary services (Couchbase, Redis, etc.) using Docker Compose:**
+2. **Start all necessary services using Docker Compose:**
 - docker-compose up -d
