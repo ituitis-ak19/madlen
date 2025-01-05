@@ -1,0 +1,5 @@
+# Maven target klasörü
+target/
+
+# IntelliJ IDEA projeleri
+.idea/
