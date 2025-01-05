@@ -16,28 +16,22 @@ public class CreateQuestionRequestDto {
     private String questionText;
 
     @NotNull
-    @NotEmpty
     private List<Integer> contextPages;
 
     @NotNull
-    @NotEmpty
     private DifficultyLevel difficultyLevel;
 
     @NotNull
-    @NotEmpty
     private CognitiveLevel cognitiveLevel;
 
     @NotNull
-    @NotEmpty
     private List<String> keyConcepts;
 
     private String courseName;
 
     @NotNull
-    @NotEmpty
     private ModelAnswer modelAnswer;
 
     @NotNull
-    @NotEmpty
     private List<String> gradingCriteria;
 }

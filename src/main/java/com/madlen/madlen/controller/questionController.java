@@ -1,9 +1,11 @@
 package com.madlen.madlen.controller;
 
 import com.madlen.madlen.dto.CreateQuestionRequestDto;
+import com.madlen.madlen.dto.FilterDto;
 import com.madlen.madlen.model.Question;
 import com.madlen.madlen.service.QuestionService;
 import jakarta.validation.Valid;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,8 +22,8 @@ public class questionController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Question>> getAll(){
-        return ResponseEntity.ok(this.questionService.getAll());
+    public ResponseEntity<Page<Question>> getAll(@RequestParam Integer page, @RequestBody(required = false) List<FilterDto> filters){
+        return ResponseEntity.ok(this.questionService.getAll(filters, page));
     }
 
     @GetMapping("/{id}")

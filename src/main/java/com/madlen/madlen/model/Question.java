@@ -19,6 +19,7 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String questionText;
+    @ElementCollection
     private List<Integer> contextPages;
     @Enumerated(EnumType.STRING)
     private DifficultyLevel difficultyLevel;
