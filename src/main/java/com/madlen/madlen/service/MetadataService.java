@@ -75,4 +75,34 @@ public class MetadataService {
             logger.error("Error occurred while saving metadata.", e);
         }
     }
+
+
+    public void updateContextPages(List<Integer> pagesToAdd, List<Integer> pagesToDelete){
+        Metadata metadata = this.metadataRepository.findById(1).orElse(null);
+        HashSet<Integer> coveragePages = new HashSet<>(metadata.getCoveragePages());
+
+        if (pagesToDelete != null) {
+            pagesToDelete.forEach(page -> {
+                if (coveragePages.contains(page)) {
+                    coveragePages.remove(page);
+                    logger.info("Removed page {} from coverage pages.", page);
+                } else {
+                    logger.warn("Page {} not found in coverage pages, skipping.", page);
+                }
+            });
+        } else {
+            logger.warn("Content pages is null, skipping removal.");
+        }
+
+        coveragePages.addAll(pagesToAdd);
+        metadata.setCoveragePages(coveragePages);
+
+        logger.info("Saving updated metadata.");
+        try {
+            metadataRepository.save(metadata);
+            logger.info("Metadata successfully saved.");
+        } catch (Exception e) {
+            logger.error("Error occurred while saving metadata.", e);
+        }
+    }
 }

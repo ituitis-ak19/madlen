@@ -1,7 +1,7 @@
 package com.madlen.madlen.service;
 
 import com.madlen.madlen.dao.QuestionDao;
-import com.madlen.madlen.dto.CreateQuestionRequestDto;
+import com.madlen.madlen.dto.QuestionRequestDto;
 import com.madlen.madlen.dto.FilterDto;
 import com.madlen.madlen.model.Question;
 import com.madlen.madlen.repository.QuestionRepository;
@@ -50,7 +50,7 @@ public class QuestionService {
     }
 
     @Transactional
-    public void create(CreateQuestionRequestDto dto) {
+    public void create(QuestionRequestDto dto) {
         logger.info("Creating a new question with text: {}", dto.getQuestionText());
 
         this.questionRepository.save(new Question(
@@ -97,4 +97,37 @@ public class QuestionService {
         this.metadataService.updateMetadata(pages, true);
     }
 
+    @Transactional
+    public void update(Integer id, QuestionRequestDto dto) {
+        logger.info("Updating a new question with id: {}", id);
+
+        Question question = this.getById(id);
+
+        if (question == null) {
+            logger.error("Attempted to update a question that does not exist. id: {}", id);
+            throw new NoSuchElementException("Question with id " + id + " does not exist.");
+        }
+
+        question.setQuestionText(dto.getQuestionText());
+        question.setCognitiveLevel(dto.getCognitiveLevel());
+        question.setCourseName(dto.getCourseName());
+        question.setContextPages(dto.getContextPages());
+        question.setDifficultyLevel(dto.getDifficultyLevel());
+        question.setGradingCriteria(dto.getGradingCriteria());
+        question.setKeyConcepts(dto.getKeyConcepts());
+        question.setModelAnswer(dto.getModelAnswer());
+
+
+        this.questionRepository.save(question);
+
+        List<Integer> pagesToDelete = new ArrayList<>();
+        for (Integer pageNumber : question.getContextPages()) {
+            if (this.questionRepository.countQuestionsByPageNumber(pageNumber) == 0) {
+                pagesToDelete.add(pageNumber);
+            }
+        }
+
+        logger.info("Question updated successfully. Updating metadata.");
+        this.metadataService.updateContextPages(dto.getContextPages(), pagesToDelete);
+    }
 }

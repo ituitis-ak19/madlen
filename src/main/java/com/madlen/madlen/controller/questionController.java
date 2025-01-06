@@ -1,6 +1,6 @@
 package com.madlen.madlen.controller;
 
-import com.madlen.madlen.dto.CreateQuestionRequestDto;
+import com.madlen.madlen.dto.QuestionRequestDto;
 import com.madlen.madlen.dto.FilterDto;
 import com.madlen.madlen.model.Question;
 import com.madlen.madlen.service.QuestionService;
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/questions")
 public class questionController {
@@ -31,8 +32,13 @@ public class questionController {
         return ResponseEntity.ok(this.questionService.getById(id));
     }
 
+    @PutMapping("/{id}")
+    public void update(@PathVariable Integer id, @RequestBody QuestionRequestDto dto){
+        this.questionService.update(id, dto);
+    }
+
     @PostMapping
-    public void create(@RequestBody @Valid CreateQuestionRequestDto dto){
+    public void create(@RequestBody @Valid QuestionRequestDto dto){
         this.questionService.create(dto);
     }
 

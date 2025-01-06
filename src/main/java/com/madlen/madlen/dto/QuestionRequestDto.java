@@ -3,16 +3,14 @@ package com.madlen.madlen.dto;
 import com.madlen.madlen.enums.CognitiveLevel;
 import com.madlen.madlen.enums.DifficultyLevel;
 import com.madlen.madlen.model.ModelAnswer;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.util.List;
 
 @Data
-public class CreateQuestionRequestDto {
+public class QuestionRequestDto {
     @NotNull
-    @NotEmpty
     private String questionText;
 
     @NotNull
